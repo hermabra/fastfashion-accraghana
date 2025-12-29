@@ -1,0 +1,636 @@
+/* ---------------- Reset ---------------- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1.6;
+	font-family: 'Roboto', sans-serif;
+	background-color: #f8f6f7;
+	color: #222;
+}
+
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* ---------------- Content Wrapper ---------------- */
+.content {
+  width: 70%;           /* keeps it from touching edges */
+  max-width: 1000px;    /* optional: stops it from getting too wide on large screens */
+  margin: 0 auto;       /* centers the content */
+  padding: 20px 0;      /* vertical spacing from top/bottom */
+}
+
+/* ---------------- Navigation ---------------- */
+nav {
+	text-transform: uppercase;
+	display: flex;
+	justify-content: center;
+	gap: 60px;
+	background: rgba(255,255,255,0.95);
+	padding: 14px 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 999;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+nav a {
+	text-decoration: none;
+	color: #222;
+	font-weight: bold;
+	letter-spacing: 1px;
+	transition: 0.3s;
+}
+
+nav a:hover {
+	color: #18507d;
+}
+
+/* ---------------- Tabs ---------------- */
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* ---------------- Lookbook Styling ---------------- */
+.look {
+  margin: 80px 0;
+}
+
+.look img {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.look-text {
+  margin: 20px 0;
+}
+
+.look-text h2 {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.look-text p {
+  margin-bottom: 1.5em;
+  line-height: 1.6;
+}
+
+
+/* ---------------- Divider ---------------- */
+.divider { width: 100%; height: 40px; }
+
+/* ---------------- Slideshow ---------------- */
+.slideshow-container {
+	position: relative;
+	max-width: 600px;
+	margin: 20px auto;
+}
+
+.slides {
+	display: none;
+	width: 100%;
+	border-radius: 8px;
+	box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.prev, .next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	padding: 8px 16px;
+	color: white;
+	background-color: rgba(0,0,0,0.5);
+	border: none;
+	font-size: 18px;
+	transform: translateY(-50%);
+	border-radius: 4px;
+	transition: 0.3s;
+}
+
+.prev:hover, .next:hover {
+	background-color: rgba(0,0,0,0.8);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* ---------------- Charts ---------------- */
+.chart {
+	width: 100%;
+	margin-top: 20px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+}
+
+/* ---------------- Footer ---------------- */
+footer {
+	text-align: center;
+	padding: 40px 0;
+	background-color: rgba(0,0,0,0.05);
+	font-size: 0.85em;
+	letter-spacing: 0.2em;
+	font-style: italic;
+}
+
+/* ---------------- NGO / On the Ground Cards ---------------- */
+.ngo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 60px;
+}
+
+@media (max-width: 900px) {
+  .ngo-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ngo-card {
+	background: white;
+	border-radius: 10px;
+	padding: 20px;
+	box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+	text-align: center;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	position: relative;
+}
+
+.ngo-card::after {
+	content: "";
+	display: block;
+	height: 1px;
+	background: #ddd;
+	width: calc(100% - 40px);
+	margin: 20px auto 0;
+}
+
+.ngo-card:last-child::after {
+	display: none;
+}
+
+.ngo-card img {
+	width: 100%;
+	height: 220px;
+	object-fit: cover;
+	border-radius: 8px;
+	margin-bottom: 16px;
+}
+
+.ngo-card h2 {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 1.6em;
+	margin-bottom: 12px;
+	letter-spacing: 1px;
+}
+
+.ngo-card p {
+	font-size: 1em;
+	line-height: 1.45;
+	color: #333;
+}
+
+.image-credit {
+  font-size: 0.8em;
+  color: #666;
+  margin: 5px 0 0 0; /* only top margin */
+  font-style: italic;
+}
+
+.image-credit a {
+  text-decoration: none; /* removes underline */
+  color: #666;           /* optional: match your image-credit style */
+}
+
+.image-credit a:hover {
+  text-decoration: underline; /* optional: underline on hover */
+}
+
+
+.ngo-card:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+}
+
+.ngo-card h2 a {
+  text-decoration: none; /* removes underline */
+  color: inherit; /* keeps the text color same as h2 */
+}
+
+.ngo-card a {
+  text-decoration: none; /* removes underline from all links */
+  color: inherit;        /* keeps the text color the same */
+}
+
+.ngo-card a:hover {
+  text-decoration: none; /* removes underline on hover too */
+}
+
+/* Only remove underline from main card link (image + title) */
+.ngo-main-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.ngo-main-link:hover {
+  text-decoration: none; /* optional: can add underline on hover if desired */
+}
+
+/* Source link styling */
+.image-credit a {
+  text-decoration: underline; /* keeps it visibly clickable */
+  color: #666;
+}
+
+.image-credit a:hover {
+  text-decoration: underline; /* or change color on hover if desired */
+}
+
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 650px) {
+	.slideshow-container { max-width: 100%; }
+	.look img, .slides { max-width: 100%; }
+	.look { flex-direction: column !important; }
+}
+
+h1 {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 3em;
+  font-weight: 700;
+  margin: 120px 0 30px 0;  /* leaves space for your fixed nav bar */
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+#solutions p {
+  margin-bottom: 24px;
+  line-height: 1.8;
+}
+
+.ngo-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+#solutions .content {
+  width: 90%;
+  max-width: 1200px;
+}
+
+#solutions h2 {
+  font-weight: bold; /* makes it bold */
+}
+
+
+.home-hero {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.home-hero h1 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.home-hero h2 {
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.intro {
+  max-width: 700px;
+  margin: 0 auto 20px;
+  font-size: 1.1rem;
+}
+
+.home-buttons {
+  margin: 20px 0 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  background: black;
+  color: white;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid black;
+  color: black;
+}
+
+.home-image {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.home-list {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+  line-height: 1.8;
+}
+
+/* Home Page Sections Styling */
+#Home section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 10px 20px;
+}
+
+#Home h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  border-bottom: 2px solid black;
+  padding-bottom: 5px;
+}
+
+#Home p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+.home-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.home-list li {
+  font-size: 1.05rem;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+
+.slideshow-caption {
+  text-align: center;   /* centers all text inside the div */
+  margin-top: 15px;     /* space above caption */
+  font-size: 1.1rem;    /* adjust text size */
+  color: #333;          /* optional: text color */
+  max-width: 800px;     /* optional: limit width for readability */
+  margin-left: auto;    /* center div horizontally */
+  margin-right: auto;   /* center div horizontally */
+}
+
+
+.highlight-text {
+  font-weight: bold;   /* makes text bold */
+  font-style: italic;  /* makes text italic */
+  text-align: center;  /* optional, if you want it centered */
+}
+.inline-image {
+  width: 35%;        
+  max-width: 180px;  
+  float: right;      
+  margin: 0 0 1em 1em; 
+  display: block;
+}
+
+.centered-image {
+  text-align: center;      
+  margin: 2em 0;           
+}
+
+.centered-image img {
+  width: 40%;              
+  max-width: 250px;        
+  height: auto;
+  display: inline-block;    
+  margin-bottom: 0.5em;    
+}
+
+.caption-text {
+  font-size: 0.9em;  
+  line-height: 1.4;
+  margin-bottom: 0.3em;
+}
+
+.caption-credit {
+  font-size: 0.8em;  
+  font-style: italic;
+  margin-bottom: 1em;
+}
+
+
+.image-wrapper {
+  display: flex;           /* enables flexbox */
+  flex-direction: column;  /* stacks image + caption vertically */
+  align-items: center;     /* centers them horizontally */
+  margin: 2em 0;           /* spacing above and below */
+}
+
+.image-wrapper img {
+  width: 80%;              /* adjust size */
+  max-width: 700px;        /* caps width */
+  height: auto;            /* keeps aspect ratio */
+}
+
+.caption-text {
+  font-size: 0.9em;
+  line-height: 1.4;
+  font-style: italic;
+  text-align: center;      /* centers caption text */
+  margin-top: 0.5em;       /* spacing between image and caption */
+}
+
+/* Restore spacing for paragraphs */
+p {
+  margin-bottom: 1.5em;  /* space after each paragraph */
+  line-height: 1.6;      /* makes text more readable */
+}
+
+.image-wrapper {
+  display: flex;           /* flexbox for alignment */
+  flex-direction: column;  /* stack image + captions vertically */
+  align-items: center;     /* center horizontally */
+  margin: 2em 0;           /* spacing above and below */
+}
+
+.image-wrapper img {
+  width: 60%;              /* adjust size as needed */
+  max-width: 500px;        /* caps width */
+  height: auto;            /* maintains aspect ratio */
+  border-radius: 8px;      /* optional styling */
+}
+
+.caption-text {
+  font-size: 0.9em;
+  line-height: 1.4;
+  text-align: center;      /* centers caption */
+  margin-top: 0.5em;       /* spacing between image and caption */
+}
+
+.caption-credit {
+  font-size: 0.8em;
+  font-style: italic;
+  text-align: center;      /* centers credit */
+  margin-top: 0.3em;
+}
+
+.caption-credit a {
+  text-decoration: underline;
+  color: #666;
+}
+
+.look {
+  margin: 80px 0;         /* spacing between each look */
+}
+
+.look-content {
+  max-width: 800px;       /* keep content readable */
+  margin: 0 auto;          /* center content */
+  padding: 20px;           /* internal padding */
+}
+
+.look-content img {
+  display: block;
+  margin: 0 auto 1em auto; /* center image, 1em below */
+  width: 60%;              /* adjust size */
+  max-width: 500px;        /* cap size */
+  border-radius: 8px;
+}
+
+.look-content p {
+  margin-bottom: 1.5em;   /* space between paragraphs */
+  line-height: 1.6;
+}
+
+.caption-text {
+  font-size: 0.9em;
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+.caption-credit {
+  font-size: 0.8em;
+  text-align: center;
+  font-style: italic;
+  margin-top: 0.2em;
+}
+
+.look-content h2 {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 2em;
+  margin: 1.5em 0 0.5em 0;
+}
+
+/* ---------------- Center images with captions ---------------- */
+.look .image-wrapper,
+.look .look-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* center image + captions horizontally */
+  margin: 2em 0;             /* spacing above and below the block */
+}
+
+.look .image-wrapper img,
+.look .look-content img {
+  display: block;
+  margin: 0 auto 0.5em auto; /* center image + small space below */
+  max-width: 80%;             /* adjust size as needed */
+  height: auto;
+  border-radius: 8px;
+}
+
+.look .caption-text {
+  text-align: center;        /* centers the text */
+  font-size: 0.9em;
+  font-style: italic;
+  margin-top: 0.5em;         /* space between image and caption */
+  margin-bottom: 0.3em;      /* spacing before credit or next element */
+}
+
+.look .caption-credit {
+  text-align: center;        /* centers credit text */
+  font-size: 0.8em;
+  font-style: italic;
+  margin-bottom: 1em;        /* spacing before next paragraph */
+}
+
+
+/* Look 4 specific styling */
+.look:nth-of-type(4) {
+    margin: 80px 0;
+    padding: 0 15px;
+    display: block;
+    justify-content: center;
+}
+
+.look:nth-of-type(4) .look-content {
+    max-width: 900px;   /* constrain width */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.look:nth-of-type(4) h2 {
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+.look:nth-of-type(4) p {
+    text-align: left;
+    max-width: 100%;     /* stay inside container */
+    margin-bottom: 1.5em;
+    line-height: 1.6;
+}
+
+.look:nth-of-type(4) img {
+    max-width: 80%;
+    height: auto;
+    margin: 1.5em auto;
+    border-radius: 8px;
+}
+
+.look:nth-of-type(4) .flourish-container {
+    max-width: 600px;
+    width: 100%;
+    margin: 1.5em auto;
+}
+
+.look:nth-of-type(4) .flourish-container iframe {
+    width: 100% !important;
+    height: 400px !important;
+}
+
